@@ -14,7 +14,7 @@ public class TaskRunner {
      * @param data
      * @return
      */
-    public long runTask(IAlgorithm algorithm, int[] data) {
+    public long runTask(IAlgorithm algorithm, Comparable[] data) {
 
 
         algorithm.setData(data);

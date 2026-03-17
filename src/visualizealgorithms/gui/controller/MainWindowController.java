@@ -73,7 +73,7 @@ public class MainWindowController implements Initializable {
         tbvRunTimes.setItems(runTimeData);
         tbvRunTimes.setEditable(true);
 
-        rbBEEntities.setDisable(true);
+        //rbBEEntities.setDisable(true);
 
         //only enable button if user clicked an algorithm
         lvAlgorithms.setOnMouseClicked((event) -> {
@@ -150,20 +150,20 @@ public class MainWindowController implements Initializable {
                     //for (int i = 0; i < inputRanges.size(); i++) {
 
                     DataPoint dp = runTimeData.get(i);
-                    //Comparable[] data = null;
-                    int[] data = null;
+                    Comparable[] data = null;
+                    //int[] data = null;
                     final double value = (float) (i + 1) / (float) runTimeData.size();
                     final int numberOfInputs = dp.getInput();
 
                     switch (selectedAlgorithm.getType()) {
                         case SORTING:
-                            //data = ng.generateTestData(selectedDataType, numberOfInputs);
-                            data = ng.generateRandomIntegers(numberOfInputs, 10);
+                            data = ng.generateTestData(selectedDataType, numberOfInputs);
+                            //data = ng.generateRandomIntegers(numberOfInputs, 10);
                             break;
                         case SEARCHING:
                             break;
                         case MISC:
-                            //data = new Integer[]{inputRanges.get(i)};
+                            data = new Integer[]{inputRanges.get(i)};
                             break;
                     }
 

@@ -12,10 +12,12 @@ public class InsertionSort extends GenericAlgorithm  {
     @Override
     public void doWork() {
 
-        int[]n = (int[]) super.getData();
+        Comparable[]n = (Comparable[]) super.getData();
 
         //algorithm implementation...
-        int i, key, j;
+        int i, j;
+        Comparable key;
+
         for (i = 1; i < n.length - 1; i++)
         {
             key = n[i];
@@ -24,7 +26,7 @@ public class InsertionSort extends GenericAlgorithm  {
         /* Move elements of arr[0..i-1], that are
         greater than key, to one position ahead
         of their current position */
-            while (j >= 0 && n[j] > key)
+            while (j >= 0 && n[j].compareTo(key) > 0)
             {
                 n[j + 1] = n[j];
                 j = j - 1;

@@ -25,9 +25,9 @@ public class AlgorithmLoader {
 
         //Add implemented/selected algorithms here..
         algorithms.add(new BubbleSort());
-        //algorithms.add(new SelectionSort());
-        //algorithms.add(new InsertionSort());
-        //algorithms.add(new QuickSort());
+        algorithms.add(new SelectionSort());
+        algorithms.add(new InsertionSort());
+        algorithms.add(new QuickSort());
 
         //more algorithms here :)
     }

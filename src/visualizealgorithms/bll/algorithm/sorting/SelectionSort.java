@@ -17,7 +17,7 @@ public class SelectionSort extends GenericAlgorithm {
     @Override
     public void doWork() {
 
-        int[] arr = (int[]) super.getData();
+        Comparable[] arr = (Comparable[]) super.getData();
         int n = arr.length;
 
         // One by one move boundary of unsorted subarray
@@ -26,12 +26,12 @@ public class SelectionSort extends GenericAlgorithm {
             // Find the minimum element in unsorted array
             int min_idx = i;
             for (int j = i+1; j < n; j++)
-                if (arr[j] < arr[min_idx])
+                if (arr[j].compareTo(arr[min_idx]) > 0)
                     min_idx = j;
 
             // Swap the found minimum element with the first
             // element
-            int temp = arr[min_idx];
+            Comparable temp = arr[min_idx];
             arr[min_idx] = arr[i];
             arr[i] = temp;
         }

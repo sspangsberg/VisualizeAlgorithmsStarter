@@ -15,7 +15,7 @@ public class QuickSort extends GenericAlgorithm {
     @Override
     public void doWork() {
 
-        int[] arr = (int[]) super.getData();
+        Comparable[] arr = (Comparable[]) super.getData();
 
         sort(arr, 0, arr.length - 1);
     }
@@ -25,7 +25,7 @@ public class QuickSort extends GenericAlgorithm {
       arr[] --> Array to be sorted,
       low  --> Starting index,
       high  --> Ending index */
-    private void sort(int[] arr, int low, int high) {
+    private void sort(Comparable[] arr, int low, int high) {
         if (low < high) {
             /* pi is partitioning index, arr[pi] is
               now at right place */
@@ -44,24 +44,24 @@ public class QuickSort extends GenericAlgorithm {
        smaller (smaller than pivot) to left of
        pivot and all greater elements to right
        of pivot */
-    private int partition(int arr[], int low, int high) {
-        int pivot = arr[high];
+    private int partition(Comparable arr[], int low, int high) {
+        Comparable pivot = arr[high];
         int i = (low - 1); // index of smaller element
         for (int j = low; j < high; j++) {
             // If current element is smaller than or
             // equal to pivot
-            if (arr[j] <= pivot) {
+            if (arr[j].compareTo(pivot) > 0) {
                 i++;
 
                 // swap arr[i] and arr[j]
-                int temp = arr[i];
+                Comparable temp = arr[i];
                 arr[i] = arr[j];
                 arr[j] = temp;
             }
         }
 
         // swap arr[i+1] and arr[high] (or pivot)
-        int temp = arr[i + 1];
+        Comparable temp = arr[i + 1];
         arr[i + 1] = arr[high];
         arr[high] = temp;
 
